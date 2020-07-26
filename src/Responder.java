@@ -29,12 +29,12 @@ public class Responder
 
     private void fillResponseMap() {
         this.responseMap.put("slow", "I think this has to do with your hardware. " +
-                "Upgrading your computer should solve this." +
+                "Upgrading your computer should solve this. " +
                 "Have you got a problem with our software?");
-        this.responseMap.put("bug", "Well, all software has some bugs, but" +
-                "our engineers are hard working to solve them." +
+        this.responseMap.put("bug", "Well, all software has some bugs, but " +
+                "our engineers are hard working to solve them. " +
                 "Can you describe the problem a bit further?");
-        this.responseMap.put("expensive", "The cost of our product is quite competitive" +
+        this.responseMap.put("expensive", "The cost of our product is quite competitive. " +
                 "Did you compare a product with the same features?");
     }
 
