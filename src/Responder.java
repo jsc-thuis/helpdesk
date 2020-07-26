@@ -67,6 +67,7 @@ public class Responder
     }
 
     private String pickDefaultResponse() {
-        
+        int index = randomGenerator.nextInt(defaultResponses.size());
+        return defaultResponses.get(index);
     }
 }
