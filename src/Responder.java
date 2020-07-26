@@ -45,5 +45,6 @@ public class Responder
     public String generateResponse()
     {
         int index = randomGenerator.nextInt(responses.size());
-        return responses.get(index);    }
+        return responses.get(index);
+    }
 }
