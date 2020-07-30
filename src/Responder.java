@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.HashMap;
 
@@ -58,8 +59,13 @@ public class Responder
      * @param word
      * @return String response
      */
-    public String generateResponse(String word) {
-        String response = this.responseMap.get(word);
+    public String generateResponse(HashSet<String> words) {
+        String response = null;
+        for (String word : words) {
+            if (this.responseMap.containsKey(word)) {
+                response = this.responseMap.get(word);
+            }
+        }
         if (response != null) {
             return response;
         } else {
