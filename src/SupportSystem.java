@@ -17,7 +17,15 @@ public class SupportSystem
 {
     private InputReader reader;
     private Responder responder;
-    
+    private final String NAME_COMPANY = "DodgySoft";
+    private final String NAME_SYSTEM = NAME_COMPANY + " Technical Support System";
+    private final String QUIT_COMMAND = "bye";
+    private final String WELCOME = "Welcome to the " + NAME_SYSTEM + ".\n\n" +
+                                    "Please tell us about your problem.\n" +
+                                    "We will assist you with any problem you might have.\n" +
+                                    "Please type '" + QUIT_COMMAND + "' to exit our system.";
+    private final String GOODBYE = "Nice talking to you. Bye...";
+
     /**
      * Creates a technical support system.
      */
@@ -42,7 +50,7 @@ public class SupportSystem
             HashSet<String> input = reader.getInput();
 
             for (String word : input) {
-                if (word.equals("bye")) finished = true;
+                if (word.equals(QUIT_COMMAND)) finished = true;
             }
             if (!finished) {
                 String response = responder.generateResponse(input);
@@ -55,20 +63,14 @@ public class SupportSystem
     /**
      * Print a welcome message to the screen.
      */
-    private void printWelcome()
-    {
-        System.out.println("Welcome to the DodgySoft Technical Support System.");
-        System.out.println();
-        System.out.println("Please tell us about your problem.");
-        System.out.println("We will assist you with any problem you might have.");
-        System.out.println("Please type 'bye' to exit our system.");
+    private void printWelcome() {
+        System.out.println(WELCOME);
     }
 
     /**
      * Print a good-bye message to the screen.
      */
-    private void printGoodbye()
-    {
-        System.out.println("Nice talking to you. Bye...");
+    private void printGoodbye() {
+        System.out.println(GOODBYE);
     }
 }
