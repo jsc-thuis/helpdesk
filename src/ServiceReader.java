@@ -63,6 +63,14 @@ public class ServiceReader {
     }
 
     /**
+     * Retourneert een list met alle gevonden services
+     * @return ArrayList<Service> service
+     */
+    public ArrayList<Service> getServices() {
+        return services;
+    }
+    
+    /**
      * Bestaat de service voor een softwarebedrijf?
      * @param company naam softwarebedrijf
      * @return true als bestaand, anders false
