@@ -17,8 +17,6 @@ public class SupportSystem
 {
     private InputReader reader;
     private Responder responder;
-    private final String NAME_COMPANY;
-    private final String NAME_SYSTEM;
     private final String QUIT_COMMAND;
     private final String WELCOME;
     private final String GOODBYE;
@@ -30,8 +28,6 @@ public class SupportSystem
     {
         ServiceReader serviceReader = new ServiceReader();
         Service service = serviceReader.getService(companyName);
-        NAME_COMPANY = companyName;
-        NAME_SYSTEM = service.getValue(Service.NAME);
         QUIT_COMMAND = service.getValue(Service.COMMAND);
         WELCOME = service.getValue(Service.WELCOME);
         GOODBYE = service.getValue(Service.GOODBYE);
