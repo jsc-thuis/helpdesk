@@ -29,6 +29,7 @@ public class Service {
         }
         for (String key : map.keySet()) {
             String value = map.get(key);
+            value = value.replace("\\n", System.lineSeparator());
             value = value.replace("|"+COMPANY+"|", map.get(COMPANY));
             value = value.replace("|"+NAME+"|", map.get(NAME).replace("|"+COMPANY+"|",  map.get(COMPANY)));
             value = value.replace("|"+COMMAND+"|", map.get(COMMAND));
