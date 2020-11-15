@@ -17,20 +17,25 @@ public class SupportSystem
 {
     private InputReader reader;
     private Responder responder;
-    private final String NAME_COMPANY = "DodgySoft";
-    private final String NAME_SYSTEM = NAME_COMPANY + " Technical Support System";
-    private final String QUIT_COMMAND = "bye";
-    private final String WELCOME = "Welcome to the " + NAME_SYSTEM + ".\n\n" +
-                                    "Please tell us about your problem.\n" +
-                                    "We will assist you with any problem you might have.\n" +
-                                    "Please type '" + QUIT_COMMAND + "' to exit our system.";
-    private final String GOODBYE = "Nice talking to you. Bye...";
+    private final String NAME_COMPANY;
+    private final String NAME_SYSTEM;
+    private final String QUIT_COMMAND;
+    private final String WELCOME;
+    private final String GOODBYE;
 
     /**
      * Creates a technical support system.
      */
-    public SupportSystem()
+    public SupportSystem(String companyName)
     {
+        ServiceReader serviceReader = new ServiceReader();
+        Service service = serviceReader.getService(companyName);
+        NAME_COMPANY = companyName;
+        NAME_SYSTEM = service.getValue(Service.NAME);
+        QUIT_COMMAND = service.getValue(Service.COMMAND);
+        WELCOME = service.getValue(Service.WELCOME);
+        GOODBYE = service.getValue(Service.GOODBYE);
+
         reader = new InputReader();
         responder = new Responder();
     }

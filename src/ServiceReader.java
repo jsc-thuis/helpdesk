@@ -47,7 +47,7 @@ public class ServiceReader {
             scanFile.close();
             add(entries);
         } catch(FileNotFoundException e) {
-            System.out.println("Er dook een probleem op: " + e);
+            System.out.println("Er dook een probleem op: " + e.toString());
         }
     }
 
@@ -56,7 +56,7 @@ public class ServiceReader {
             try {
                 services.add(new Service(entries));
             } catch(Exception e) {
-                System.out.println(e);
+                System.out.println(e.toString());
             }
             entries.clear();
         }
