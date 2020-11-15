@@ -69,7 +69,7 @@ public class ServiceReader {
     public ArrayList<Service> getServices() {
         return services;
     }
-    
+
     /**
      * Bestaat de service voor een softwarebedrijf?
      * @param company naam softwarebedrijf
