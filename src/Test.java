@@ -1,6 +1,10 @@
 public class Test {
     public static void main(String[] args) {
-        SupportSystem s = new SupportSystem("DodgySoft");
-        s.start();
+        try {
+            SupportSystem s = new SupportSystem("DodgeSoft");
+            s.start();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

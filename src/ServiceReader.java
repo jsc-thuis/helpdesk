@@ -14,7 +14,7 @@ public class ServiceReader {
     // de list bevat alle ontdekte services
     private ArrayList<Service> services;
 
-    public ServiceReader() {
+    public ServiceReader() throws Exception {
         this("services.ini");
     }
     
@@ -22,7 +22,7 @@ public class ServiceReader {
      * Creeert een ServiceReader en leest het bestand in om er de services in te zoeken en te bewaren in de services-list
      * @param inifile Het servicebestand.
      */
-    public ServiceReader(String inifile) {
+    public ServiceReader(String inifile) throws Exception {
         services = new ArrayList<>();
         HashMap<String, String> entries = new HashMap<>();
         try{
@@ -47,7 +47,8 @@ public class ServiceReader {
             scanFile.close();
             add(entries);
         } catch(FileNotFoundException e) {
-            System.out.println("Er dook een probleem op: " + e.toString());
+            //System.out.println("Er dook een probleem op: " + e.toString());
+            throw e;
         }
     }
 
@@ -87,11 +88,11 @@ public class ServiceReader {
      * @param company naam softwarebedrijf
      * @return Service
      */
-    public Service getService(String company) {
+    public Service getService(String company) throws Exception {
         for(Service service : services) {
             if (service.getValue(Service.COMPANY).equals(company)) return service;
         }
-        return null;
+        throw new Exception("De service voor het bedrijf " + company + " bestaat niet");
     }
 
     /**

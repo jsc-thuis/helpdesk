@@ -24,10 +24,15 @@ public class SupportSystem
     /**
      * Creates a technical support system.
      */
-    public SupportSystem(String companyName)
+    public SupportSystem(String companyName) throws Exception
     {
         ServiceReader serviceReader = new ServiceReader();
-        Service service = serviceReader.getService(companyName);
+        Service service = null;
+        try {
+            service = serviceReader.getService(companyName);
+        } catch(Exception e) {
+            throw e;
+        }
         QUIT_COMMAND = service.getValue(Service.COMMAND);
         WELCOME = service.getValue(Service.WELCOME);
         GOODBYE = service.getValue(Service.GOODBYE);
