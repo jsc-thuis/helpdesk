@@ -29,29 +29,30 @@ public class Responder
     }
 
     private void fillResponseMap() {
-        this.responseMap.put("slow", "I think this has to do with your hardware. " +
-                "Upgrading your computer should solve this. " +
-                "Have you got a problem with our software?");
-        this.responseMap.put("bug", "Well, all software has some bugs, but " +
-                "our engineers are hard working to solve them. " +
-                "Can you describe the problem a bit further?");
-        this.responseMap.put("expensive", "The cost of our product is quite competitive. " +
-                "Did you compare a product with the same features?");
+        responseMap.put("traag", "Dit is wss een probleem met uw hardware");
+        responseMap.put("bug", "Welke versie van het programma gebruikt u?");
+        responseMap.put("duur", "Ons programma heeft programmafunctie die niet makkelijk in dezeflde prijscategorie te vinden zijn");
+        responseMap.put("onveilig", "We werken samen met één van de beste cybersecuritybedrijven in de wereld. Uw gegevens zijn zeker veilig");
+        responseMap.put("proefversie", "We bieden een proefversie van onze programma aan. Deze duurt 30 dagen");
+        responseMap.put("app", "U kunt onze app downloaden op ios en android en deze linken aan uw pc");
+        responseMap.put("cloud", "Onze klanten hebben recht op 30gb opslagruimte op onze couldservice");
+        responseMap.put("betalingsplan", "€59 per maand, €299 voor 6 maanden of €499 voor 12 maanden");
+        responseMap.put("delen", "Het programma is bedoelt voor individueel gebruik");
+        responseMap.put("sponsor", "Voor sponsordeals zal ik u verwijzen naar onze marketing afdeling");
     }
 
     private void fillDefaultResponses() {
-        defaultResponses.add("That sounds interesting. Tell me more...");
-        defaultResponses.add("That sounds odd. Could you describe that problem in more detail?");
-        defaultResponses.add("No other customer has ever complained about this before. \n" +
-                      "What is your system configuration?");
-        defaultResponses.add("That's a known problem with Vista. Windows 7 is much better.");
-        defaultResponses.add("I need a bit more information on that.");
-        defaultResponses.add("Have you checked that you do not have a dll conflict?");
-        defaultResponses.add("That is explained in the manual. Have you read the manual?");
-        defaultResponses.add("Your description is a bit wishy-washy. Have you got an expert\n" +
-                      "there with you who could describe this more precisely?");
-        defaultResponses.add("That's not a bug, it's a feature!");
-        defaultResponses.add("Could you elaborate on that?");
+        defaultResponses.add("Ik verwijs u door naar mijn collega");
+        defaultResponses.add("Bekijk onze faq");
+        defaultResponses.add("Zou u meer uitleg kunnen geven");
+        defaultResponses.add("Wordt er een foutcode vermeld?");
+        defaultResponses.add("Start uw computer op?");
+        defaultResponses.add("Welke besturingssysteem gebruikt u?");
+        defaultResponses.add("Hoe lang gebeurt dit al?");
+        defaultResponses.add("U wordt verwezen naar de tutorial");
+        defaultResponses.add("Welke windows versie gebruikt u?");
+        defaultResponses.add("Welke versie van onze software gebruikt u?");
+        defaultResponses.add("U wordt verwezen naar de sales afdeling");
     }
 
     /**
